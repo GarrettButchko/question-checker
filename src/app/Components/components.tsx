@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, type HTMLMotionProps } from "framer-motion";
 
-/* ----------------------------------------------------
+/* ---------------------------------------------------
  * Spacer
  * ------------------------------------------------------ */
 export function Spacer({
