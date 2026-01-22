@@ -121,7 +121,7 @@ export default function Home() {
             Welcome to CIS 340 Question Maker!
           </motion.p>
           <Text variant="body" className="md:text-lg sm:text-base text-center sm:text-left text-sub2">
-            This application is designed to help you create and manage questions for your CIS 430 course. Whether you're an instructor looking to build a question bank or a student preparing for exams, our tool provides an easy and efficient way to generate and organize questions.
+            This application is designed to help you create and manage questions for your CIS 340 course. Whether you're an instructor looking to build a question bank or a student preparing for exams, our tool provides an easy and efficient way to generate and organize questions.
           </Text>
 
           <Text variant="body" className="md:text-md sm:text-base text-center sm:text-left text-accent">
