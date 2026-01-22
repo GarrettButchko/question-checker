@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(240, 240, 249);
+  --foreground: rgb(255, 255, 255);
+  --oppbackground: rgb(0, 0, 0);
+  --oppforeground: rgb(28, 28, 30);
+  --textColor: #1D1D1F;
+  --sub1: #eeeeee;
+  --sub2:	#9d9d9d;
+  --sub3:	#7e7e7e;
+  --accent: #b300ff;
 }
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-oppbackground: var(--oppbackground);
+  --color-oppforeground: var(--oppforeground);
+  --color-textColor: var(--textColor);
+  --color-sub1: var(--sub1);
+  --color-sub2: var(--sub2);
+  --color-sub3: var(--sub3);
+  --color-accent: var(--accent);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: rgb(0, 0, 0);
+    --foreground: rgb(28, 28, 30);
+    --oppbackground: rgb(240, 240, 249);
+    --oppforeground: rgb(255, 255, 255);
+    --textColor: #F5F5F7;
+    --sub1: #393939;
+    --sub2: #999999;
+    --sub3: #b2b2b2;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  overflow-y: scroll; /* keeps layout stable (no shift when scrollbar appears) */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
