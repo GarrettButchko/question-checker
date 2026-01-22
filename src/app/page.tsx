@@ -3,7 +3,7 @@
 import { VStack, Section, HStack, Spacer, Text } from "./Components/components";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 type Answer = {
@@ -42,6 +42,10 @@ export default function Home() {
   const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
   return `${months[m - 1]}${d}`
 }
+
+    useEffect(() => {
+        document.title = `Question Maker`;
+    });
 
   const groupNumbers: number[] = [
     1, 2, 3, 4, 5,
