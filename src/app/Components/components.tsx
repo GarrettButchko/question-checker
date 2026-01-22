@@ -135,3 +135,22 @@ export function Section({
 }) {
   return <section className={`w-full px-6 ${className}`}>{children}</section>;
 }
+
+
+export function AdaptiveHStack({
+  children,
+  spacing = 0,
+  className = "",
+  style,
+  ...motionProps
+}: { children?: React.ReactNode; spacing?: number; className?: string } & HTMLMotionProps<"div">) {
+  return (
+    <motion.div
+      className={`flex flex-col md:flex-row ${className}`}
+      style={{ gap: spacing, ...style }}
+      {...motionProps}
+    >
+      {children}
+    </motion.div>
+  );
+}
