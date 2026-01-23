@@ -62,9 +62,9 @@ app/page.tsx
 ## Intended Use
 
 This tool is intended for:
--- **Drafting questions before submission**
--- **Validating question structure**
--- **Avoiding formatting mistakes**
+- **Drafting questions before submission**
+- **Validating question structure**
+- **Avoiding formatting mistakes**
 
 It does not submit questions automatically — it prepares them correctly.
 
