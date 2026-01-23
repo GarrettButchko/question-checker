@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Question Maker (Spec-Compliant)
 
-## Getting Started
+A lightweight web tool for creating **multiple-choice questions** that conform exactly to the formatting and behavioral requirements of our course’s question system.
 
-First, run the development server:
+This tool was built to prevent common formatting errors and invalid question states before submission.
+
+---
+
+## Why This Exists
+
+The course’s question system is **very strict** about:
+
+- The number of answers per question  
+- Marking answers as correct or incorrect  
+- Maintaining a consistent structure across all questions  
+
+This tool enforces those rules directly in the UI, ensuring questions work correctly with the professor’s system.
+
+---
+
+## Features
+
+- Create questions with a fixed number of answers
+- Mark answers as **Correct / Incorrect**
+- Prevent invalid question configurations
+- Simple, fast, distraction-free interface
+- Used by multiple students and shared by course staff
+
+---
+
+## Tech Stack
+
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion**
+
+Bootstrapped with `create-next-app` and customized for this specific use case.
+
+---
+
+## Getting Started (Local Development)
+
+Install dependencies:
 
 ```bash
+npm install
+
+Run Developer Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open your browser at:
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can edit the main page here:
+app/page.tsx
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Intended Use
 
-To learn more about Next.js, take a look at the following resources:
+This tool is intended for:
+-- **Drafting questions before submission**
+-- **Validating question structure**
+-- **Avoiding formatting mistakes**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+It does not submit questions automatically — it prepares them correctly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Disclaimer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This tool is not an official course product.
+It is a student-built utility designed to assist with question preparation.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
