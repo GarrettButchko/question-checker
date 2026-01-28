@@ -84,7 +84,7 @@ export default function Home() {
             inline-flex items-center justify-center
             rounded-full px-5 py-3
             font-semibold text-white
-            bg-purple-600 hover:bg-purple-700
+            bg-purple-600
             active:bg-purple-800
             transition
             shadow-sm
