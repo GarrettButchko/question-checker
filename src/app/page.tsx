@@ -49,7 +49,7 @@ export default function Home() {
   });
 
   return (
-    <div className="w-full mt-40 px-3 sm:px-6 md:px-9 flex justify-center mb-20">
+    <div className="w-full mt-16 sm:mt-24 lg:mt-40 px-3 sm:px-6 lg:px-9 flex justify-center mb-16 sm:mb-20">
       <VStack className="items-center" spacing={40}>
         <Intro />
         <QuestionsSelection />
@@ -103,7 +103,7 @@ export default function Home() {
         <VStack className="items-start" spacing={8}>
           <motion.p
             className="
-                md:text-4xl
+                lg:text-4xl
                 sm:text-3xl
                 text-2xl
                 font-bold
@@ -116,11 +116,11 @@ export default function Home() {
           >
             Welcome to CIS 340 Question Maker!
           </motion.p>
-          <Text variant="body" className="md:text-lg sm:text-base text-center sm:text-left text-sub2">
-            This application is designed to help you create and manage questions for your CIS 340 course. Whether you're an instructor looking to build a question bank or a student preparing for exams, our tool provides an easy and efficient way to generate and organize questions.
+          <Text variant="body" className="lg:text-lg sm:text-base text-center sm:text-left text-sub2">
+            This application is designed to help you create and manage questions for your CIS 340 course. Whether you're stuck or just want an easy way to create them, our tool provides an easy and efficient way to generate and organize questions.
           </Text>
 
-          <Text variant="body" className="md:text-md sm:text-base text-center sm:text-left text-accent">
+          <Text variant="body" className="lg:text-lg sm:text-base text-center sm:text-left text-accent">
             Author: Garrett Butchko (with assistance from ChatGPT)
           </Text>
         </VStack>
@@ -129,43 +129,37 @@ export default function Home() {
   }
 
   function QuestionsSelection() {
-    return (
-      <Section className="w-full max-w-4xl bg-foreground rounded-[30px] items-center py-5">
-        <AdaptiveHStack className="items-center" spacing={8}>
+  return (
+    <Section className="w-full max-w-4xl bg-foreground rounded-[30px] items-center py-5">
+      <div className="w-full px-2 sm:px-4">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center sm:gap-6">
           <motion.p
             className="
-                md:text-3xl
-                sm:text-2xl
-                text-1xl
-                font-bold
-                text-accent
-                transition-all
-                ease-in-out
-                duration-100
-                text-center
+              text-xl sm:text-2xl lg:text-3xl
+              font-bold text-accent
+              text-center lg:text-left
+              whitespace-nowrap
             "
           >
             Question Options:
           </motion.p>
 
-          <Spacer />
+          <div className="flex flex-col lg:flex-row lg:ml-auto gap-3 lg:gap-4">
+            
+              <GroupNulgropdown setGroupNum={setGroupNum} groupNum={groupNum} />
+              <QuestionNulgropdown
+                questionAmt={questionAmt}
+                setQuestionCount={handleQuestionCountChange}
+              />
+            
 
-          <HStack spacing={8}>
-            <GroupNumDropdown setGroupNum={setGroupNum} groupNum={groupNum} />
-            <QuestionNumDropdown
-              questionAmt={questionAmt}
-              setQuestionCount={handleQuestionCountChange}
-            />
-          </HStack>
-
-          <FileDatePicker
-            selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate}
-          />
-        </AdaptiveHStack>
-      </Section>
-    );
-  }
+            <FileDatePicker selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+          </div>
+        </div>
+      </div>
+    </Section>
+  )
+}
 
   function handleQuestionCountChange(nextCount: number) {
     setQuestionAmt(nextCount)
@@ -194,7 +188,7 @@ function setQuestionCount(nextCount: number, setQuestions: SetQuestions) {
 }
 
 
-function GroupNumDropdown({
+function GroupNulgropdown({
   groupNum,
   setGroupNum,
 }: {
@@ -216,7 +210,7 @@ function GroupNumDropdown({
         onChange={(e) => {
           setGroupNum(Number(e.target.value));
         }}
-        className="text-sub2 bg-transparent outline-none md:text-[16px] sm:text-[14px] text-[12px] cursor-pointer"
+        className="text-sub2 bg-transparent outline-none lg:text-[16px] sm:text-[14px] text-[12px] cursor-pointer"
       >
         {groupNumbers.map((language, i) => (
           <option key={i} value={language}>Group {language}</option>
@@ -227,7 +221,7 @@ function GroupNumDropdown({
 }
 
 
-function QuestionNumDropdown({
+function QuestionNulgropdown({
   questionAmt,
   setQuestionCount,
 }: {
@@ -247,7 +241,7 @@ function QuestionNumDropdown({
         onChange={(e) => {
           setQuestionCount(Number(e.target.value));
         }}
-        className="text-sub2 bg-transparent outline-none md:text-[16px] sm:text-[14px] text-[12px] cursor-pointer"
+        className="text-sub2 bg-transparent outline-none lg:text-[16px] sm:text-[14px] text-[12px] cursor-pointer"
       >
         {questionAmount.map((amount, i) => (
           <option key={i} value={amount}>{amount} {amount == 1 ? "Question" : "Questions"}</option>
@@ -268,7 +262,7 @@ function FileDatePicker({
   return (
     <div className="flex rounded-full bg-sub1 px-4 items-center justify-center h-full p-3">
       <HStack>
-        <Text className="text-sub2 md:text-[16px] sm:text-[14px] text-[12px] mr-2">
+        <Text className="text-sub2 lg:text-[16px] sm:text-[14px] text-[12px] mr-2 whitespace-nowrap">
           Date Due:
         </Text>
 
@@ -278,7 +272,7 @@ function FileDatePicker({
           onChange={(e) => setSelectedDate(e.target.value)}
           className="
               text-sub2 bg-transparent outline-none
-              md:text-[16px] sm:text-[14px] text-[12px]
+              lg:text-[16px] sm:text-[14px] text-[12px]
               cursor-pointer
             "
         />
@@ -394,7 +388,7 @@ function QuestionSection({
 
   const numToLetter: string[] = ["a", "b", "c", "d"];
   return (
-    <Section className="w-full max-w-4xl rounded-[30px] items-center">
+    <Section className="w-full max-w-4xl min-w-0 rounded-[30px] items-center">
         <VStack className="items-center w-full" spacing={16}>
           <AnimatePresence initial={true} mode="popLayout">
           {questions.map((q, qi) => (
@@ -420,7 +414,7 @@ function QuestionSection({
 
               <div className="mt-4 flex flex-col gap-3">
                 {q.answers.map((a, ai) => (
-                  <div key={a.id} className="flex items-center gap-3">
+                  <AdaptiveHStack key={a.id} className="flex items-center" spacing={8}>
                     {/* Toggle correct/incorrect */}
 
                     <HStack spacing={8} className="items-center w-full">
@@ -450,7 +444,7 @@ function QuestionSection({
                     >
                       {a.isCorrect ? "Correct" : "Incorrect"}
                     </button>
-                  </div>
+                  </AdaptiveHStack >
                 ))}
               </div>
             </motion.div>
