@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, type HTMLMotionProps } from "framer-motion";
 
-/* --------------------------------------------------
+/* ------------------------------------------------------
  * Spacer
  * ------------------------------------------------------ */
 export function Spacer({
@@ -137,6 +137,9 @@ export function Section({
 }
 
 
+/* ------------------------------------------------------
+ * AdaptiveHStack
+ * ------------------------------------------------------ */
 export function AdaptiveHStack({
   children,
   spacing = 0,
@@ -147,6 +150,27 @@ export function AdaptiveHStack({
   return (
     <motion.div
       className={`flex flex-col md:flex-row ${className}`}
+      style={{ gap: spacing, ...style }}
+      {...motionProps}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------
+ * AdaptiveVStack
+ * ------------------------------------------------------ */
+export function AdaptiveVStack({
+  children,
+  spacing = 0,
+  className = "",
+  style,
+  ...motionProps
+}: { children?: React.ReactNode; spacing?: number; className?: string } & HTMLMotionProps<"div">) {
+  return (
+    <motion.div
+      className={`flex flex-row md:flex-col ${className}`}
       style={{ gap: spacing, ...style }}
       {...motionProps}
     >
